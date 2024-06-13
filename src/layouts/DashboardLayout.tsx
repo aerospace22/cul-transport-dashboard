@@ -112,7 +112,7 @@ export const DashboardLayout: React.FC = () => {
       </div>
 
       <div className="h-full w-full ml-[300px]">
-        <div className="h-[60px] w-full bg-white flex flex-row justify-between items-center border-b-2 border-gray-100 fixed top-0 px-5">
+        <div className="h-[60px] w-[calc(100%-300px)] bg-white flex flex-row justify-between items-center border-b-2 border-gray-100 fixed top-0 px-5">
           <div></div>
           <div className="!text-sm flex flex-row gap-5">
             <Link to="/dashboard/account-settings" className="text-gray-500 hover:text-gray-800">

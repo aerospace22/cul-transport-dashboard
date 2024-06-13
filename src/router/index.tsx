@@ -26,6 +26,8 @@ const OverviewPage = LoadComponent(React.lazy(() => import("@/views/dashboard/Ov
 const BusDriversManagePage = LoadComponent(React.lazy(() => import("@/views/dashboard/bus-management/bus-drivers/BusDriversManagePage")));
 const BusConductorsManagePage = LoadComponent(React.lazy(() => import("@/views/dashboard/bus-management/bus-conductors/BusConductorsManagePage")));
 const BusVehiclesManagePage = LoadComponent(React.lazy(() => import("@/views/dashboard/bus-management/bus-vehicles/BusVehiclesManagePage")));
+const BusRoutesManagePage = LoadComponent(React.lazy(() => import("@/views/dashboard/bus-management/bus-routes/BusRoutesManagePage")));
+const BusRouteFormPage = LoadComponent(React.lazy(() => import("@/views/dashboard/bus-management/bus-routes/BusRouteFormPage")));
 
 export default createBrowserRouter([
   {
@@ -73,6 +75,14 @@ export default createBrowserRouter([
       {
         path: "/dashboard/bus-vehicles",
         element: BusVehiclesManagePage,
+      },
+      {
+        path: "/dashboard/bus-routes",
+        element: BusRoutesManagePage,
+      },
+      {
+        path: "/dashboard/bus-routes/form",
+        element: BusRouteFormPage,
       },
     ],
   },

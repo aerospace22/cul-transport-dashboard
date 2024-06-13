@@ -61,7 +61,6 @@ export const BusVehicleFormModal: React.FC<Props> = (props) => {
     });
   };
 
-  console.log(props.formData);
   React.useEffect(() => {
     if (props.formData) {
       form.setFieldValue("busDriverId", props.formData.busDriverId);
