@@ -12,7 +12,7 @@ export const PageHeader: React.FC<Props> = (props) => {
   const breadcrumbItems = props.breadcrumbs ? props.breadcrumbs.map((crumb) => ({ title: crumb })) : [];
 
   return (
-    <div className="h-[120px] w-full flex flex-col justify-center bg-white border-b-2 border-gray-100 px-5 mb-8">
+    <div className="h-[120px] w-full flex flex-col justify-center bg-white border-b-2 border-gray-100 fixed top-[60px] px-5 mb-8">
       <div className="h-full flex flex-col justify-between py-5">
         <div>
           {props.breadcrumbs ? (

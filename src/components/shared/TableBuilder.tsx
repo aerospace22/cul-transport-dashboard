@@ -17,5 +17,5 @@ const NoDataBanner = () => {
 };
 
 export const TableBuilder: React.FC<Props> = (props) => {
-  return <DataTable data={props.data || []} columns={props.columns} noDataComponent={<NoDataBanner />} pagination />;
+  return <DataTable data={props.data || []} columns={props.columns} noDataComponent={<NoDataBanner />} selectableRows pagination />;
 };

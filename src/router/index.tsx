@@ -25,6 +25,7 @@ const ResetPasswordPage = LoadComponent(React.lazy(() => import("@/views/auth/Re
 const OverviewPage = LoadComponent(React.lazy(() => import("@/views/dashboard/OverviewPage")));
 const BusDriversManagePage = LoadComponent(React.lazy(() => import("@/views/dashboard/bus-management/bus-drivers/BusDriversManagePage")));
 const BusConductorsManagePage = LoadComponent(React.lazy(() => import("@/views/dashboard/bus-management/bus-conductors/BusConductorsManagePage")));
+const BusVehiclesManagePage = LoadComponent(React.lazy(() => import("@/views/dashboard/bus-management/bus-vehicles/BusVehiclesManagePage")));
 
 export default createBrowserRouter([
   {
@@ -68,6 +69,10 @@ export default createBrowserRouter([
       {
         path: "/dashboard/bus-conductors",
         element: BusConductorsManagePage,
+      },
+      {
+        path: "/dashboard/bus-vehicles",
+        element: BusVehiclesManagePage,
       },
     ],
   },
