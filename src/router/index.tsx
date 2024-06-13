@@ -8,6 +8,11 @@ import { LoadComponent } from "@/components/LoadComponent";
 import { AuthLayout, DashboardLayout } from "@/layouts";
 
 /**
+ * Utility Pages
+ */
+const MaintenancePage = LoadComponent(React.lazy(() => import("@/views/MaintenancePage")));
+
+/**
  * Auth Pages
  */
 const LoginPage = LoadComponent(React.lazy(() => import("@/views/auth/LoginPage")));
@@ -22,6 +27,10 @@ const BusDriversManagePage = LoadComponent(React.lazy(() => import("@/views/dash
 const BusConductorsManagePage = LoadComponent(React.lazy(() => import("@/views/dashboard/bus-management/bus-conductors/BusConductorsManagePage")));
 
 export default createBrowserRouter([
+  {
+    path: "*",
+    element: MaintenancePage,
+  },
   {
     path: "/",
     element: <Navigate to="/auth/login" />,
