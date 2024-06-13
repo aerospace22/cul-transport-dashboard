@@ -3,8 +3,9 @@ import { toast } from "react-toastify";
 
 export type BusVehicle = {
   id?: number;
-  fullname: string;
-  contactNo?: string;
+  busNo: string;
+  plateNo: string;
+  type: "premium" | "ordinary";
 };
 
 export const BusVehiclesService = {

@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "antd";
 import { PageHeader } from "@/components/shared";
+import { BusRouteForm } from "@/components/domains/dashboard";
 
 const BusRouteFormPage: React.FC = () => {
   return (
@@ -12,8 +13,8 @@ const BusRouteFormPage: React.FC = () => {
       ></PageHeader>
 
       <div className="px-5">
-        <Card className="w-1/2 min-h-[100px]">
-          <h1 className="text-md font-medium">Route Details</h1>
+        <Card className="w-full min-h-[100px]">
+          <BusRouteForm />
         </Card>
       </div>
     </>
