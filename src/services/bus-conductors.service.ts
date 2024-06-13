@@ -25,4 +25,15 @@ export const BusConductorsService = {
       })
       .catch((error) => console.log("API call failed: ", error));
   },
+
+  updateConductor: async function (id: number, conductorData: Conductor) {
+    return await httpClient
+      .patch("/bus-conductors/" + id, conductorData)
+      .then((response) => {
+        toast.success("Conductor updated succesfully");
+
+        return response;
+      })
+      .catch((error) => console.log("API call failed: ", error));
+  },
 };

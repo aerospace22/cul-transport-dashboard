@@ -28,8 +28,8 @@ export const PageHeader: React.FC<Props> = (props) => {
           ) : null}
         </div>
         <div className="flex flex-col gap-2">
-          <h1 className="text-xl font-medium">{props.title}</h1>
-          <p className="text-xs text-gray-500">{props.subtitle}</p>
+          <h1 className="text-lg font-medium">{props.title}</h1>
+          <p className="text-xs text-gray-700">{props.subtitle}</p>
         </div>
       </div>
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
 import { LuHome, LuUsers2, LuBus, LuMap, LuTicket, LuFileSpreadsheet, LuCloudFog, LuUserCog } from "react-icons/lu";
+import { useAuth } from "@/hooks";
 import BRAND_LOGO from "@/assets/cul-transport-logo.png";
 
 const ICON_SIZE = 18;
@@ -79,9 +80,13 @@ const linkGroups = [
 ];
 
 export const DashboardLayout: React.FC = () => {
+  const auth = useAuth();
+
+  console.log(auth);
+
   return (
     <div className="h-screen w-screen flex flex-row">
-      <div className="w-[300px] h-screen bg-slate-100 border-r-2 border-gray-100 fixed top-0 left-0">
+      <div className="w-[300px] h-screen bg-white border-r-2 border-gray-100 fixed top-0 left-0">
         <div className="py-5">
           <div className="w-full h-auth flex justify-center items-center">
             <img src={BRAND_LOGO} className="h-auto w-[160px]" alt="cul-transport-logo.png" />
@@ -90,9 +95,13 @@ export const DashboardLayout: React.FC = () => {
           <div className="flex flex-col gap-5 mt-10">
             {linkGroups.map((group) => (
               <div className="flex flex-col gap-1" key={group.groupName}>
-                <p className="text-xs text-slate-500 font-medium ml-3">{group.groupName}</p>
+                <p className="text-xs text-slate-500 font-medium ml-5">{group.groupName}</p>
                 {group.children.map((child) => (
-                  <Link to={child.to} className="text-xs text-slate-800 flex flex-row gap-3 items-center hover:bg-slate-300 py-3 px-3" key={child.to}>
+                  <Link
+                    to={child.to}
+                    className="text-xs text-slate-800 font-medium flex flex-row gap-3 items-center hover:bg-slate-200 hover:text-blue-700 py-3 px-3 pl-5"
+                    key={child.to}
+                  >
                     {child.icon} <span className="mt-1">{child.label}</span>
                   </Link>
                 ))}

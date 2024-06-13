@@ -25,4 +25,15 @@ export const BusDriversService = {
       })
       .catch((error) => console.log("API call failed: ", error));
   },
+
+  updateDriver: async function (id: number, driverData: Driver) {
+    return await httpClient
+      .patch("/bus-drivers/" + id, driverData)
+      .then((response) => {
+        toast.success("Driver updated succesfully");
+
+        return response;
+      })
+      .catch((error) => console.log("API call failed: ", error));
+  },
 };

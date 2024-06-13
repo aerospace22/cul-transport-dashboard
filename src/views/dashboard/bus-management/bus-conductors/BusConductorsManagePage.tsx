@@ -21,7 +21,7 @@ const BusConductorsManagePage: React.FC = () => {
   };
 
   const handleUpdate = (rowData: any) => {
-    console.log(rowData);
+    handleModal(true, rowData);
   };
 
   const handleDelete = (rowId: number) => {
@@ -63,6 +63,8 @@ const BusConductorsManagePage: React.FC = () => {
 
       <BusPersonnelFormModal
         isOpen={modal.isOpen}
+        formType={modal.selectedData ? "update" : "add"}
+        formData={modal.selectedData || null}
         formFor="conductor"
         title="Bus Conductor Details"
         refetch={refetch}
