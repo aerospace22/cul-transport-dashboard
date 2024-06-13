@@ -28,6 +28,17 @@ const BusConductorsManagePage = LoadComponent(React.lazy(() => import("@/views/d
 const BusVehiclesManagePage = LoadComponent(React.lazy(() => import("@/views/dashboard/bus-management/bus-vehicles/BusVehiclesManagePage")));
 const BusRoutesManagePage = LoadComponent(React.lazy(() => import("@/views/dashboard/bus-management/bus-routes/BusRoutesManagePage")));
 const BusRouteFormPage = LoadComponent(React.lazy(() => import("@/views/dashboard/bus-management/bus-routes/BusRouteFormPage")));
+const BusBookingsManagePage = LoadComponent(React.lazy(() => import("@/views/dashboard/bus-management/bus-bookings/BusBookingsManagePage")));
+const PaymentsLogManagePage = LoadComponent(React.lazy(() => import("@/views/dashboard/payments-management/payments-log/PaymentsLogManagePage")));
+const PaymongoReferenceManagePage = LoadComponent(
+  React.lazy(() => import("@/views/dashboard/payments-management/paymongo-reference/PaymongoReferenceManagePage"))
+);
+const StaffAccountsManagePage = LoadComponent(
+  React.lazy(() => import("@/views/dashboard/accounts-management/staff-accounts/StaffAccountsManagePage"))
+);
+const CustomerAccountsManagePage = LoadComponent(
+  React.lazy(() => import("@/views/dashboard/accounts-management/customer-accounts/CustomerAccountsManagePage"))
+);
 
 export default createBrowserRouter([
   {
@@ -83,6 +94,26 @@ export default createBrowserRouter([
       {
         path: "/dashboard/bus-routes/form",
         element: BusRouteFormPage,
+      },
+      {
+        path: "/dashboard/bus-bookings",
+        element: BusBookingsManagePage,
+      },
+      {
+        path: "/dashboard/payments-log",
+        element: PaymentsLogManagePage,
+      },
+      {
+        path: "/dashboard/paymongo-reference",
+        element: PaymongoReferenceManagePage,
+      },
+      {
+        path: "/dashboard/staff-accounts",
+        element: StaffAccountsManagePage,
+      },
+      {
+        path: "/dashboard/customer-accounts",
+        element: CustomerAccountsManagePage,
       },
     ],
   },
