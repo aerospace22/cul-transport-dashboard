@@ -84,7 +84,9 @@ const BusConductorsManagePage: React.FC = () => {
               <Button color="success" className="text-xs">
                 Export to CSV
               </Button>
-              <Button className="text-xs">Refresh List</Button>
+              <Button className="text-xs" onClick={() => refetch()}>
+                Refresh List
+              </Button>
             </div>
           </div>
 

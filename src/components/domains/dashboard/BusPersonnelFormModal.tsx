@@ -23,16 +23,16 @@ export const BusPersonnelFormModal: React.FC<Props> = (props) => {
   const handleFormSubmit = async (formData: Driver) => {
     if (props.formFor === "driver") {
       if (props.formType === "update") {
-        return await BusDriversService.updateDriver(+props.formData.id!, formData);
+        await BusDriversService.updateDriver(+props.formData.id!, formData);
+      } else {
+        await BusDriversService.addDriver(formData);
       }
-
-      await BusDriversService.addDriver(formData);
     } else {
       if (props.formType === "update") {
-        return await BusConductorsService.updateConductor(+props.formData.id!, formData);
+        await BusConductorsService.updateConductor(+props.formData.id!, formData);
+      } else {
+        await BusConductorsService.addConductor(formData);
       }
-
-      await BusConductorsService.addConductor(formData);
     }
 
     handleCloseModal();
