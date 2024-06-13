@@ -36,4 +36,15 @@ export const BusConductorsService = {
       })
       .catch((error) => console.log("API call failed: ", error));
   },
+
+  deleteConductor: async function (id: number) {
+    return await httpClient
+      .delete("/bus-conductors/" + id)
+      .then((response) => {
+        toast.success("Conductor deleted succesfully");
+
+        return response;
+      })
+      .catch((error) => console.log("API call failed: ", error));
+  },
 };

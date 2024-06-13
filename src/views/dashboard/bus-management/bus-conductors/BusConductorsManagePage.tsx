@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Card, Button } from "antd";
+import { Card, Button, Modal } from "antd";
 import { BusConductorsService } from "@/services";
 import { PageHeader, TableBuilder } from "@/components/shared";
 import { BusPersonnelFormModal } from "@/components/domains/dashboard";
@@ -25,7 +25,16 @@ const BusConductorsManagePage: React.FC = () => {
   };
 
   const handleDelete = (rowId: number) => {
-    console.log(rowId);
+    Modal.confirm({
+      title: "Confirm",
+      content: "Do you confirm to delete this record?",
+      async onOk() {
+        await BusConductorsService.deleteConductor(rowId).finally(() => refetch());
+      },
+      onCancel() {
+        //
+      },
+    });
   };
 
   const columns = [

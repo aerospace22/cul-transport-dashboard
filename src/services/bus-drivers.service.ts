@@ -36,4 +36,15 @@ export const BusDriversService = {
       })
       .catch((error) => console.log("API call failed: ", error));
   },
+
+  deleteDriver: async function (id: number) {
+    return await httpClient
+      .delete("/bus-drivers/" + id)
+      .then((response) => {
+        toast.success("Driver deleted succesfully");
+
+        return response;
+      })
+      .catch((error) => console.log("API call failed: ", error));
+  },
 };
