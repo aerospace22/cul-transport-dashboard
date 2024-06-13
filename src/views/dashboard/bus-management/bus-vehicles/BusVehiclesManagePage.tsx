@@ -2,7 +2,8 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Card, Button, Modal } from "antd";
 import { PageHeader, TableBuilder } from "@/components/shared";
-import { BusConductorsService } from "@/services";
+import { BusVehicleFormModal } from "@/components/domains/dashboard";
+import { BusVehiclesService } from "@/services";
 
 const BusVehiclesManagePage: React.FC = () => {
   const [modal, setModal] = React.useState({
@@ -14,7 +15,7 @@ const BusVehiclesManagePage: React.FC = () => {
 
   const { isLoading, data, refetch } = useQuery({
     queryKey: ["bus-drivers"],
-    queryFn: async () => BusConductorsService.getConductorsList(),
+    queryFn: async () => BusVehiclesService.getBusVehiclesList(),
   });
 
   const handleModal = (isOpen: boolean, selectedData?: undefined) => {
@@ -30,7 +31,7 @@ const BusVehiclesManagePage: React.FC = () => {
       title: "Confirm",
       content: "Do you confirm to delete this record?",
       async onOk() {
-        await BusConductorsService.deleteConductor(rowId).finally(() => refetch());
+        await BusVehiclesService.deleteBusVehicle(rowId).finally(() => refetch());
       },
       onCancel() {
         //
@@ -42,17 +43,17 @@ const BusVehiclesManagePage: React.FC = () => {
     {
       name: "Bus #",
       sortable: true,
-      selector: (row: any) => row.fullname,
+      selector: (row: any) => row.busNo,
     },
     {
       name: "Assigned Driver",
       sortable: true,
-      selector: (row: any) => row.contactNo,
+      selector: (row: any) => row.assignedDriver?.fullname,
     },
     {
       name: "Assigned Conductor",
       sortable: true,
-      selector: (row: any) => row.contactNo,
+      selector: (row: any) => row.assignedConductor?.fullname,
     },
     {
       name: "Date Added",
@@ -90,11 +91,19 @@ const BusVehiclesManagePage: React.FC = () => {
         breadcrumbs={["Manage Bus Vehicles"]}
       ></PageHeader>
 
+      <BusVehicleFormModal
+        isOpen={modal.isOpen}
+        title="Bus Vehicle Details"
+        formData={modal.selectedData}
+        refetch={refetch}
+        handleClose={() => handleModal(false, undefined)}
+      />
+
       <div className="px-5">
         <Card className="w-full min-h-[100px] flex flex-col gap-7">
           <div className="flex flex-row justify-between">
             <div className="w-full">
-              <h1 className="font-bold">Conductors List</h1>
+              <h1 className="font-bold">Bus Vehicles List</h1>
             </div>
             <div className="w-full flex flex-row justify-end gap-2">
               <Button type="primary" className="text-xs" onClick={() => handleModal(true, undefined)}>
