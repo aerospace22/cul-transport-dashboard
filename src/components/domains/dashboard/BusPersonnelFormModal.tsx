@@ -54,7 +54,6 @@ export const BusPersonnelFormModal: React.FC<Props> = (props) => {
   return (
     <Modal title={props.title} open={props.isOpen} onOk={() => form.submit()} onCancel={props.handleClose} okText="Submit Data">
       <Form layout="vertical" form={form} onFinish={handleFormSubmit} requiredMark>
-        {JSON.stringify(props)}
         <Form.Item label="Full Name" name="fullname">
           <Input required />
         </Form.Item>
