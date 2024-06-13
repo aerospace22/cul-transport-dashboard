@@ -40,9 +40,7 @@ const PaymentsLogManagePage: React.FC = () => {
               <h1 className="font-bold">Payments List</h1>
             </div>
             <div className="w-full flex flex-row justify-end gap-2">
-              <Button color="success" className="text-xs">
-                Export to CSV
-              </Button>
+              <Button className="text-xs">Export to CSV</Button>
               <Button className="text-xs" onClick={() => refetch()}>
                 Refresh List
               </Button>

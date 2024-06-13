@@ -109,9 +109,7 @@ const BusVehiclesManagePage: React.FC = () => {
               <Button type="primary" className="text-xs" onClick={() => handleModal(true, undefined)}>
                 Add Bus Vehicle
               </Button>
-              <Button color="success" className="text-xs">
-                Export to CSV
-              </Button>
+              <Button className="text-xs">Export to CSV</Button>
               <Button className="text-xs" onClick={() => refetch()}>
                 Refresh List
               </Button>

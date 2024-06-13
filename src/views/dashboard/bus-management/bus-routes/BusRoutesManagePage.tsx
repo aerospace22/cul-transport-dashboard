@@ -77,9 +77,7 @@ const BusRoutesManagePage: React.FC = () => {
                   Add Route
                 </Button>
               </Link>
-              <Button color="success" className="text-xs">
-                Export to CSV
-              </Button>
+              <Button className="text-xs">Export to CSV</Button>
               <Button className="text-xs" onClick={() => refetch()}>
                 Refresh List
               </Button>
