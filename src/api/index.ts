@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosError, InternalAxiosRequestConfig } from "axios";
 
 const baseURLS = {
-  // prod: "https://dclms-backend-nestjs-production.up.railway.app/api/v1",
+  prod: "cul-transport-server-production.up.railway.app/api/v1",
   local: "http://localhost:3000/api/v1",
 };
 
