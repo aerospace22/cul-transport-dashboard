@@ -48,12 +48,12 @@ const BusVehiclesManagePage: React.FC = () => {
     {
       name: "Assigned Driver",
       sortable: true,
-      selector: (row: any) => row.assignedDriver?.fullname,
+      selector: (row: any) => row.busDriver?.fullname,
     },
     {
       name: "Assigned Conductor",
       sortable: true,
-      selector: (row: any) => row.assignedConductor?.fullname,
+      selector: (row: any) => row.busConductor?.fullname,
     },
     {
       name: "Date Added",
