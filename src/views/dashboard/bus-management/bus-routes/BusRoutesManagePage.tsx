@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { Card, Button, Modal } from "antd";
-import { BusDriversService } from "@/services";
+import { BusBusRoutesService } from "@/services";
 import { PageHeader, TableBuilder } from "@/components/shared";
 
 const BusRoutesManagePage: React.FC = () => {
   const { isLoading, data, refetch } = useQuery({
     queryKey: ["bus-drivers"],
-    queryFn: async () => BusDriversService.getDriversList(),
+    queryFn: async () => BusBusRoutesService.getBusRoutesList(),
   });
 
   const handleUpdate = (rowData: any) => {
@@ -20,7 +20,7 @@ const BusRoutesManagePage: React.FC = () => {
       title: "Confirm",
       content: "Do you confirm to delete this record?",
       async onOk() {
-        await BusDriversService.deleteDriver(rowId).finally(() => refetch());
+        await BusBusRoutesService.deleteBusRoute(rowId).finally(() => refetch());
       },
       onCancel() {
         //
@@ -30,14 +30,9 @@ const BusRoutesManagePage: React.FC = () => {
 
   const columns = [
     {
-      name: "Full Name",
+      name: "#",
       sortable: true,
-      selector: (row: any) => row.fullname,
-    },
-    {
-      name: "Contact #",
-      sortable: true,
-      selector: (row: any) => row.contactNo,
+      selector: (row: any) => row.id,
     },
     {
       name: "Actions",
