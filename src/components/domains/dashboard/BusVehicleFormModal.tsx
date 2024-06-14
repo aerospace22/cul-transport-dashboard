@@ -36,7 +36,7 @@ export const BusVehicleFormModal: React.FC<Props> = (props) => {
     form.resetFields();
   };
 
-  const handleFormSubmit = async (formData: Driver) => {
+  const handleFormSubmit = async (formData: any) => {
     if (props.formType === "update") {
       await BusVehiclesService.updateBusVehicle(+props.formData.id!, formData);
     } else {
