@@ -9,7 +9,7 @@ export type Credentials = {
 export const AuthService = {
   login: async function (credentials: Credentials, setLoading: React.Dispatch<React.SetStateAction<boolean>>) {
     return await httpClient
-      .post("/auth/admin/login", credentials)
+      .post("/auth/login", credentials)
       .then((response) => {
         const { user, accessToken } = response.data;
 
