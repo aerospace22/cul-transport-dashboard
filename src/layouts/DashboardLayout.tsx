@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet, Link } from "react-router-dom";
 import { LuHome, LuUsers2, LuBus, LuMap, LuTicket, LuFileSpreadsheet, LuCloudFog, LuUserCog } from "react-icons/lu";
 import { useAuth } from "@/hooks";
-import BRAND_LOGO from "@/assets/cul-transport-logo.png";
+// import BRAND_LOGO from "@/assets/cul-transport-logo.png";
 
 const ICON_SIZE = 18;
 
