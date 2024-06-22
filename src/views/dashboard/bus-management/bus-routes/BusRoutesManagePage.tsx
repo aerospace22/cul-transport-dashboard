@@ -30,22 +30,17 @@ const BusRoutesManagePage: React.FC = () => {
 
   const columns = [
     {
-      name: "#",
-      sortable: true,
-      selector: (row: any) => row.id,
-    },
-    {
       name: "Assigned Bus",
       sortable: true,
       selector: (row: any) => row.bus.busNo,
     },
     {
-      name: "Assigned Bus Driver",
+      name: "Bus Driver",
       sortable: true,
       selector: (row: any) => row.bus.busDriver.fullname,
     },
     {
-      name: "Assigned Bus Conductor",
+      name: "Bus Conductor",
       sortable: true,
       selector: (row: any) => row.bus.busConductor.fullname,
     },
@@ -76,7 +71,7 @@ const BusRoutesManagePage: React.FC = () => {
         return (
           <div className="flex flex-row gap-6">
             <button className="font-medium" onClick={() => handleUpdate(row)}>
-              Update
+              Manage
             </button>
             <button className="text-red-700 font-medium" onClick={() => handleDelete(row.id)}>
               Remove

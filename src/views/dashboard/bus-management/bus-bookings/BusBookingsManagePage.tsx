@@ -5,7 +5,7 @@ import { BusConductorsService } from "@/services";
 import { PageHeader, TableBuilder } from "@/components/shared";
 
 const BusBookingsManagePage: React.FC = () => {
-  const { isLoading, data, refetch } = useQuery({
+  const { isLoading, refetch } = useQuery({
     queryKey: ["bus-bookings"],
     queryFn: async () => BusConductorsService.getConductorsList(),
   });

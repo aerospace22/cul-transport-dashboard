@@ -7,7 +7,7 @@ import { PageHeader, TableBuilder } from "@/components/shared";
 const statusOption = ["paid", "unpaid"].map((status) => ({ label: status.toUpperCase(), value: status }));
 
 const PaymongoReferenceManagePage: React.FC = () => {
-  const { isLoading, data, refetch } = useQuery({
+  const { isLoading, refetch } = useQuery({
     queryKey: ["payment-paymongo-references"],
     queryFn: async () => PaymentsService.getPaymongoPaymentsList(),
   });
@@ -57,7 +57,7 @@ const PaymongoReferenceManagePage: React.FC = () => {
             </div>
           </div>
 
-          {isLoading ? "Fetching data" : <TableBuilder data={data} columns={columns} />}
+          {isLoading ? "Fetching data" : <TableBuilder data={[]} columns={columns} />}
         </Card>
       </div>
     </>
