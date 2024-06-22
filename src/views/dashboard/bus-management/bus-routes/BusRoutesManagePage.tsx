@@ -7,7 +7,7 @@ import { PageHeader, TableBuilder } from "@/components/shared";
 
 const BusRoutesManagePage: React.FC = () => {
   const { isLoading, data, refetch } = useQuery({
-    queryKey: ["bus-drivers"],
+    queryKey: ["bus-routes"],
     queryFn: async () => BusBusRoutesService.getBusRoutesList(),
   });
 
@@ -33,6 +33,41 @@ const BusRoutesManagePage: React.FC = () => {
       name: "#",
       sortable: true,
       selector: (row: any) => row.id,
+    },
+    {
+      name: "Assigned Bus",
+      sortable: true,
+      selector: (row: any) => row.bus.busNo,
+    },
+    {
+      name: "Assigned Bus Driver",
+      sortable: true,
+      selector: (row: any) => row.bus.busDriver.fullname,
+    },
+    {
+      name: "Assigned Bus Conductor",
+      sortable: true,
+      selector: (row: any) => row.bus.busConductor.fullname,
+    },
+    {
+      name: "Route From",
+      sortable: true,
+      selector: (row: any) => row.routeFrom,
+    },
+    {
+      name: "Route To",
+      sortable: true,
+      selector: (row: any) => row.routeTo,
+    },
+    {
+      name: "Departure Date & Time",
+      sortable: true,
+      selector: (row: any) => `${row.departureDate} - ${row.departureTime}`,
+    },
+    {
+      name: "Arrival Date & Time",
+      sortable: true,
+      selector: (row: any) => `${row.arrivalDate} - ${row.arrivalTime}`,
     },
     {
       name: "Actions",

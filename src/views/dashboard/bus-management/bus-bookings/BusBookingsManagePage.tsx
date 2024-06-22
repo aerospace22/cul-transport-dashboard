@@ -6,7 +6,7 @@ import { PageHeader, TableBuilder } from "@/components/shared";
 
 const BusBookingsManagePage: React.FC = () => {
   const { isLoading, data, refetch } = useQuery({
-    queryKey: ["bus-drivers"],
+    queryKey: ["bus-bookings"],
     queryFn: async () => BusConductorsService.getConductorsList(),
   });
 
@@ -47,7 +47,7 @@ const BusBookingsManagePage: React.FC = () => {
             </div>
           </div>
 
-          {isLoading ? "Fetching data" : <TableBuilder data={data} columns={columns} />}
+          {isLoading ? "Fetching data" : <TableBuilder data={[]} columns={columns} />}
         </Card>
       </div>
     </>

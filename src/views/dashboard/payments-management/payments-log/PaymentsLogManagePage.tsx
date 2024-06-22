@@ -6,7 +6,7 @@ import { PageHeader, TableBuilder } from "@/components/shared";
 
 const PaymentsLogManagePage: React.FC = () => {
   const { isLoading, data, refetch } = useQuery({
-    queryKey: ["bus-drivers"],
+    queryKey: ["payment-logs"],
     queryFn: async () => BusConductorsService.getConductorsList(),
   });
 

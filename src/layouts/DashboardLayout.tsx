@@ -86,10 +86,11 @@ export const DashboardLayout: React.FC = () => {
 
   return (
     <div className="h-screen w-screen flex flex-row">
-      <div className="w-[300px] h-screen bg-white border-r-2 border-gray-100 fixed top-0 left-0">
+      <div className="w-[300px] h-screen bg-slate-900 border-r-2 border-gray-100 fixed top-0 left-0">
         <div className="py-5">
           <div className="w-full h-auth flex justify-center items-center">
-            <img src={BRAND_LOGO} className="h-auto w-[160px]" alt="cul-transport-logo.png" />
+            <h1 className="text-xl text-white font-medium">CUL Bus Transport</h1>
+            {/* <img src={BRAND_LOGO} className="h-auto w-[160px]" alt="cul-transport-logo.png" /> */}
           </div>
 
           <div className="flex flex-col gap-5 mt-10">
@@ -99,7 +100,7 @@ export const DashboardLayout: React.FC = () => {
                 {group.children.map((child) => (
                   <Link
                     to={child.to}
-                    className="text-xs text-slate-800 font-medium flex flex-row gap-3 items-center hover:bg-slate-200 hover:text-blue-700 py-3 px-3 pl-5"
+                    className="text-xs text-gray-400 font-medium flex flex-row gap-3 items-center hover:bg-slate-800 hover:text-white py-3 px-3 pl-5"
                     key={child.to}
                   >
                     {child.icon} <span className="mt-1">{child.label}</span>

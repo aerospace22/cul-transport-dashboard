@@ -1,13 +1,15 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Card, Button } from "antd";
-import { BusConductorsService } from "@/services";
+import { Card, Input, Select, Button } from "antd";
+import { PaymentsService } from "@/services";
 import { PageHeader, TableBuilder } from "@/components/shared";
+
+const statusOption = ["paid", "unpaid"].map((status) => ({ label: status.toUpperCase(), value: status }));
 
 const PaymongoReferenceManagePage: React.FC = () => {
   const { isLoading, data, refetch } = useQuery({
-    queryKey: ["bus-drivers"],
-    queryFn: async () => BusConductorsService.getConductorsList(),
+    queryKey: ["payment-paymongo-references"],
+    queryFn: async () => PaymentsService.getPaymongoPaymentsList(),
   });
 
   const columns = [
@@ -42,6 +44,10 @@ const PaymongoReferenceManagePage: React.FC = () => {
           <div className="flex flex-row justify-between">
             <div className="w-full">
               <h1 className="font-bold">Paymongo References List</h1>
+              <div className="flex flex-row gap-2 mt-3">
+                <Input placeholder="Search" />
+                <Select options={statusOption} placeholder="Filter by status" />
+              </div>
             </div>
             <div className="w-full flex flex-row justify-end gap-2">
               <Button className="text-xs">Export to CSV</Button>

@@ -12,7 +12,7 @@ const BusConductorsManagePage: React.FC = () => {
   });
 
   const { isLoading, data, refetch } = useQuery({
-    queryKey: ["bus-drivers"],
+    queryKey: ["bus-conductors"],
     queryFn: async () => BusConductorsService.getConductorsList(),
   });
 
