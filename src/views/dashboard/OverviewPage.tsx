@@ -27,7 +27,7 @@ const OverviewPage: React.FC = () => {
             <h1 className="text-md text-gray-600 font-medium">Recent Booking Transactions</h1>
           </Card>
           <Card className="w-2/5 min-h-[100px]">
-            <h1 className="text-md text-gray-600 font-medium">Bus Routes</h1>
+            <h1 className="text-md text-gray-600 font-medium">Paymongo Reference List</h1>
           </Card>
         </div>
       </div>
