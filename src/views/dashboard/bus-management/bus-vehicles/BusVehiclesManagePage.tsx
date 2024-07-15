@@ -11,8 +11,6 @@ const BusVehiclesManagePage: React.FC = () => {
     selectedData: undefined,
   });
 
-  console.log(modal);
-
   const { isLoading, data, refetch } = useQuery({
     queryKey: ["bus-drivers"],
     queryFn: async () => BusVehiclesService.getBusVehiclesList(),

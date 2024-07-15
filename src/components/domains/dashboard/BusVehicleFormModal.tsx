@@ -53,7 +53,7 @@ export const BusVehicleFormModal: React.FC<Props> = (props) => {
   };
 
   const fetchPersonnelData = async () => {
-    const [driversData, conductorsData] = await Promise.all([BusConductorsService.getConductorsList(), BusDriversService.getDriversList()]);
+    const [conductorsData, driversData] = await Promise.all([BusConductorsService.getConductorsList(), BusDriversService.getDriversList()]);
 
     setPersonnelList({
       drivers: driversData.map((driver: Driver) => ({ value: driver.id, label: driver.fullname })),

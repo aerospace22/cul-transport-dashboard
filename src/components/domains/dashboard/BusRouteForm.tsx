@@ -20,10 +20,10 @@ export const BusRouteForm: React.FC = () => {
   const handleFormSubmit = async (formData: any) => {
     await BusBusRoutesService.addBusRoute({
       ...formData,
-      departureDate: moment(new Date(formData.departureDate)).format("YYYY-MM-DD"),
-      departureTime: moment(new Date(formData.departureTime)).format("hh:mm A"),
-      arrivalDate: moment(new Date(formData.arrivalDate)).format("YYYY-MM-DD"),
-      arrivalTime: moment(new Date(formData.arrivalTime)).format("hh:mm A"),
+      departureDate: moment(new Date(formData.departureDate)).format("YYYY-MM-DD").toString(),
+      departureTime: moment(new Date(formData.departureTime)).format("hh:mm A").toString(),
+      arrivalDate: moment(new Date(formData.arrivalDate)).format("YYYY-MM-DD").toString(),
+      arrivalTime: moment(new Date(formData.arrivalTime)).format("hh:mm A").toString(),
     });
   };
 
